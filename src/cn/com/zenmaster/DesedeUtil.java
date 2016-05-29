@@ -9,14 +9,20 @@ import java.security.NoSuchAlgorithmException;
  * Created by TianYu on 2016/5/29.
  * 3DES对称加密
  */
-public class DesedeUtil {
+public class DesedeUtil extends EncryptUtil{
+
+    private static DesedeUtil instance;
+
+    public static DesedeUtil getInstance() {
+        return new DesedeUtil();
+    }
 
     /**
      *  生成 SecretKey
      *
      * @return
      */
-    public static byte[] getSecretKey() {
+    public byte[] getSecretKey() {
         SecretKey secretKey = null;
         try {
             //1. 秘钥生成器
@@ -37,7 +43,7 @@ public class DesedeUtil {
      * @param data
      * @return
      */
-    public static byte[] encryptData(byte[] key, byte[] data) {
+    public byte[] encryptData(byte[] key, byte[] data) {
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
@@ -60,7 +66,7 @@ public class DesedeUtil {
      * @param data
      * @return
      */
-    public static byte[] descryptData(byte[] key, byte[] data) {
+    public byte[] descryptData(byte[] key, byte[] data) {
         byte[] bytes = null;
         try {
             //1. 恢复秘钥

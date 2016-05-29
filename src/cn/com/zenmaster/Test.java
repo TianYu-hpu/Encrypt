@@ -23,11 +23,11 @@ public class Test {
         System.out.println("3des 解密" + new String(DesedeUtil.descryptData(desedeSecretKey, encryptDataDesede)));*/
 
         // AES 加解密
-        byte[] aesSecretKey = AesUtil.getSecretKey();
+        byte[] aesSecretKey = AesUtil.getInstance().getSecretKey();
         System.out.println("secretKey" + BytesToHex.fromBytesToHex(aesSecretKey));
-        byte[] encryptDataAes = AesUtil.encryptData(aesSecretKey, data.getBytes());
+        byte[] encryptDataAes = AesUtil.getInstance().encryptData(aesSecretKey, data.getBytes());
         System.out.println("aes 加密" + BytesToHex.fromBytesToHex(encryptDataAes));
-        System.out.println("aes 解密" + new String(AesUtil.descryptData(aesSecretKey, encryptDataAes)));
+        System.out.println("aes 解密" + new String(AesUtil.getInstance().descryptData(aesSecretKey, encryptDataAes)));
     }
 
 }
