@@ -1,7 +1,9 @@
 package cn.com.zenmaster;
 
-import cn.com.zenmaster.asymmetric.DHUtils;
+import cn.com.zenmaster.asymmetric.RSAUtil;
 
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.util.Map;
 
 /**
@@ -62,7 +64,7 @@ public class Test {
         byte[] localKey2;
 
         //初始化秘钥，并生成甲方秘钥对
-        Map<String, Object> map1 = DHUtils.initKey();
+        /*Map<String, Object> map1 = DHUtils.initKey();
         publicKey1 = DHUtils.getPublicKey(map1);
         privateKey1 = DHUtils.getPrivateKey(map1);
 
@@ -85,8 +87,15 @@ public class Test {
 
         //根据甲方私钥和乙方公钥生成甲方本地密钥
         localKey1 = DHUtils.getSecretKey(publicKey2, privateKey1);
-        System.out.println("甲方本地秘钥:" + BytesToHex.fromBytesToHex(localKey1));
+        System.out.println("甲方本地秘钥:" + BytesToHex.fromBytesToHex(localKey1));*/
 
+        //RSA算法
+        Map<String, Object> map = RSAUtil.initKey();
+        RSAPublicKey publicKey = RSAUtil.getPublicKey(map);
+        RSAPrivateKey privateKey = RSAUtil.getPrivateKey(map);
+        byte[] encryptData = RSAUtil.encryptData(publicKey, data.getBytes());
+        System.out.println("加密后数据:" + BytesToHex.fromBytesToHex(encryptData));
+        System.out.println("解密后数据:" + new String(RSAUtil.descryptData(privateKey, encryptData)));
 
     }
 
