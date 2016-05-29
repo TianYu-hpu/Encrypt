@@ -1,7 +1,8 @@
 package cn.com.zenmaster;
 
-import cn.com.zenmaster.digest.DigestAlgorithm;
-import cn.com.zenmaster.digest.DigestUtil;
+import cn.com.zenmaster.asymmetric.DHUtils;
+
+import java.util.Map;
 
 /**
  * Created by TianYu on 2016/5/29.
@@ -41,12 +42,50 @@ public class Test {
 
         //HmacMD5 摘要
 
-        byte[] hmacMD5SecretKey = DigestUtil.getInstance().getHMACSecretKey(DigestAlgorithm.HmacSHA256.getValue());
+       /* byte[] hmacMD5SecretKey = DigestUtil.getInstance().getHMACSecretKey(DigestAlgorithm.HmacSHA256.getValue());
 
         System.out.println(BytesToHex.fromBytesToHex(hmacMD5SecretKey));
 
-        System.out.print(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getHMACDigest(hmacMD5SecretKey, data.getBytes(), DigestAlgorithm.HmacSHA256.getValue())));
+        System.out.print(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getHMACDigest(hmacMD5SecretKey, data.getBytes(), DigestAlgorithm.HmacSHA256.getValue())));*/
 
+        //甲方公钥
+        byte[] publicKey1;
+        //甲方私钥
+        byte[] privateKey1;
+        //甲方本地秘钥
+        byte[] localKey1;
+        //乙方公钥
+        byte[] publicKey2;
+        //乙方私钥
+        byte[] privateKey2;
+        //乙方本地秘钥
+        byte[] localKey2;
+
+        //初始化秘钥，并生成甲方秘钥对
+        Map<String, Object> map1 = DHUtils.initKey();
+        publicKey1 = DHUtils.getPublicKey(map1);
+        privateKey1 = DHUtils.getPrivateKey(map1);
+
+        //输出甲方公钥和私钥
+        System.out.println("甲方公钥:" + BytesToHex.fromBytesToHex(publicKey1));
+        System.out.println("甲方私钥:" + BytesToHex.fromBytesToHex(privateKey1));
+
+        //初始化秘钥，并根据甲方公钥生成乙方密钥对
+        Map<String, Object> map2 = DHUtils.initKey(publicKey1);
+        publicKey2 = DHUtils.getPublicKey(map2);
+        privateKey2 = DHUtils.getPrivateKey(map2);
+        //输出乙方公钥和私钥
+        System.out.println("乙方公钥:" + BytesToHex.fromBytesToHex(publicKey2));
+        System.out.println("乙方私钥:" + BytesToHex.fromBytesToHex(privateKey2));
+
+        //根据甲方公钥和乙方私钥生成乙方本地秘钥
+        localKey2 = DHUtils.getSecretKey(publicKey1, privateKey2);
+        System.out.println("乙方本地秘钥:" + BytesToHex.fromBytesToHex(localKey2));
+
+
+        //根据甲方私钥和乙方公钥生成甲方本地密钥
+        localKey1 = DHUtils.getSecretKey(publicKey2, privateKey1);
+        System.out.println("甲方本地秘钥:" + BytesToHex.fromBytesToHex(localKey1));
 
 
     }

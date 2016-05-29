@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f78cf2fc-61d6-49d4-89ce-b1900b9d236b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/digest/DigestAlgorithm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/digest/DigestUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/AesUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/SymmetricAlgorithm.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cn/com/zenmaster/AESUtil.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/DH实现.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/DH算法原理.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/HMAC摘要算法.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/HMAC算法种类.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/SHA.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/消息摘要分类.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/消息摘要应用.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/消息摘要概念.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/非对称加密概述.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raw/非对称密码概述.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/asymmetric/AsymmetricAlgorithm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/asymmetric/DHUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zenmaster/Test.java" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/Test.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cn/com/zenmaster/DesUtil.java" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/DesUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cn/com/zenmaster/DesedeUtil.java" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/DesedeUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cn/com/zenmaster/EncryptUtil.java" afterPath="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/EncryptUtil.java" />
     </list>
     <ignored path="Encrypt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DigestUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/digest/DigestUtil.java">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="49" column="80" selection-start-line="49" selection-start-column="80" selection-end-line="49" selection-end-column="80" />
+            <state relative-caret-position="289">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,26 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DigestAlgorithm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/digest/DigestAlgorithm.java">
+      <file leaf-file-name="DHUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/asymmetric/DHUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-              <folding>
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="47" column="151" selection-start-line="47" selection-start-column="151" selection-end-line="47" selection-end-column="151" />
+            <state relative-caret-position="-456">
+              <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,11 +98,13 @@
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/SymmetricAlothrn.java" />
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/digest/DigestAlothrithm.java" />
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/SymmetricAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/AesUtil.java" />
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/DesedeUtil.java" />
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/DesUtil.java" />
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/digest/DigestUtil.java" />
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/digest/DigestAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/cn/com/zenmaster/asymmetric/AsymmetricAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/AesUtil.java" />
+        <option value="$PROJECT_DIR$/src/cn/com/zenmaster/asymmetric/DHUtils.java" />
         <option value="$PROJECT_DIR$/src/cn/com/zenmaster/Test.java" />
       </list>
     </option>
@@ -186,7 +177,38 @@
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Encrypt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Encrypt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Encrypt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Encrypt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Encrypt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="raw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="PackagesPane" />
     </panes>
@@ -635,6 +657,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f78cf2fc-61d6-49d4-89ce-b1900b9d236b" name="Default" comment="" />
@@ -642,7 +667,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464501315543</updated>
-      <workItem from="1464501319814" duration="11120000" />
+      <workItem from="1464501319814" duration="17615000" />
     </task>
     <task id="LOCAL-00001" summary="DES加密算法">
       <created>1464505236299</created>
@@ -672,15 +697,22 @@
       <option name="project" value="LOCAL" />
       <updated>1464507869858</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="算法名称枚举&#10;Hmac摘要算法">
+      <created>1464514361712</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1464514361712</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11120000" />
+    <option name="totallyTimeSpent" value="17615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -690,11 +722,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.74013156" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74013156" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -729,12 +761,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.74013156" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.74013156" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -744,7 +784,8 @@
     <MESSAGE value="3DES对称加密算法" />
     <MESSAGE value="AES对称加密算法" />
     <MESSAGE value="重构、AES秘钥长度无限制政策文件导入" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构、AES秘钥长度无限制政策文件导入" />
+    <MESSAGE value="算法名称枚举&#10;Hmac摘要算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="算法名称枚举&#10;Hmac摘要算法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -784,11 +825,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1464514167590" expanded="true" signature="59:53821" placeholder="..." />
-            <marker date="1464514167590" expanded="true" signature="98:214" placeholder="..." />
-            <marker date="1464514167590" expanded="true" signature="192:214" placeholder="..." />
-            <marker date="1464514167590" expanded="true" signature="51562:51610" placeholder="..." />
-            <marker date="1464514167590" expanded="true" signature="51562:51625" placeholder="..." />
+            <marker date="1464529405298" expanded="true" signature="59:54826" placeholder="..." />
+            <marker date="1464529405298" expanded="true" signature="98:214" placeholder="..." />
+            <marker date="1464529405298" expanded="true" signature="192:214" placeholder="..." />
+            <marker date="1464529405298" expanded="true" signature="52567:52615" placeholder="..." />
+            <marker date="1464529405298" expanded="true" signature="52567:52630" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -833,14 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/AesUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="74" column="80" selection-start-line="74" selection-start-column="80" selection-end-line="74" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/DesedeUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -854,7 +887,7 @@
         <state relative-caret-position="-798">
           <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -864,10 +897,10 @@
         <state relative-caret-position="168">
           <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding>
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
+            <element signature="e#288#289#0" expanded="false" />
+            <element signature="e#316#317#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,7 +910,7 @@
         <state relative-caret-position="120">
           <caret line="49" column="80" selection-start-line="49" selection-start-column="80" selection-end-line="49" selection-end-column="80" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,18 +920,51 @@
         <state relative-caret-position="168">
           <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding>
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="false" />
+            <element signature="e#410#411#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+            <element signature="e#470#471#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/asymmetric/AsymmetricAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#240#241#0" expanded="false" />
+            <element signature="e#272#273#0" expanded="false" />
+            <element signature="e#300#301#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/symmetric/AesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/asymmetric/DHUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-456">
+          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/com/zenmaster/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="47" column="151" selection-start-line="47" selection-start-column="151" selection-end-line="47" selection-end-column="151" />
+        <state relative-caret-position="289">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
