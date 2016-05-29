@@ -1,4 +1,4 @@
-package cn.com.zenmaster;
+package cn.com.zenmaster.symmetric;
 
 /**
  * Created by TianYu on 2016/5/29.

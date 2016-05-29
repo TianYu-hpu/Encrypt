@@ -1,4 +1,4 @@
-package cn.com.zenmaster;
+package cn.com.zenmaster.symmetric;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
@@ -7,14 +7,14 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by TianYu on 2016/5/29.
- * 3DES对称加密
+ * AES对称加密
  */
-public class DesedeUtil extends EncryptUtil{
+public class AesUtil extends EncryptUtil {
 
-    private static DesedeUtil instance;
+    private static AesUtil instance;
 
-    public static DesedeUtil getInstance() {
-        return new DesedeUtil();
+    public static AesUtil getInstance() {
+        return new AesUtil();
     }
 
     /**
@@ -26,9 +26,9 @@ public class DesedeUtil extends EncryptUtil{
         SecretKey secretKey = null;
         try {
             //1. 秘钥生成器
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("DESede");
-            //2. 秘钥生成器初始化 可指定秘钥长度 112 或168 默认168,x相比DES的秘钥长度更长，安全性更高
-            keyGenerator.init(168);
+            KeyGenerator keyGenerator = KeyGenerator.getInstance(SymmetricAlgorithm.AES.getValue());
+            //2. 秘钥生成器初始化 可指定秘钥长度 128,从Oracle官网获得无政策权限后可为192或156长度
+            keyGenerator.init(256);
             //3. 生成秘钥
             secretKey = keyGenerator.generateKey();
         } catch (NoSuchAlgorithmException e) {
@@ -47,9 +47,9 @@ public class DesedeUtil extends EncryptUtil{
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, "DESede");
+            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.AES.getValue());
             //2. Cipher 完成加密工作
-            Cipher cipher = Cipher.getInstance("DESede");
+            Cipher cipher = Cipher.getInstance(SymmetricAlgorithm.AES.getValue());
             //3. 根据秘钥对cipher进行初始化
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             //4. 加密
@@ -70,9 +70,9 @@ public class DesedeUtil extends EncryptUtil{
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, "DESede");
+            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.AES.getValue());
             //2. Cipher 完成解密工作
-            Cipher cipher = Cipher.getInstance("DESede");
+            Cipher cipher = Cipher.getInstance(SymmetricAlgorithm.AES.getValue());
             //3. 根据秘钥对cipher进行初始化
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             //4. 解密
