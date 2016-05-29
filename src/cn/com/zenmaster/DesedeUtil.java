@@ -7,9 +7,9 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by TianYu on 2016/5/29.
- * DES 对称加密算法
+ * 3DES对称加密
  */
-public class DesUtil {
+public class DesedeUtil {
 
     /**
      *  生成 SecretKey
@@ -20,9 +20,9 @@ public class DesUtil {
         SecretKey secretKey = null;
         try {
             //1. 秘钥生成器
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("DES");
-            //2. 秘钥生成器初始化
-            keyGenerator.init(56);
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("DESede");
+            //2. 秘钥生成器初始化 可指定秘钥长度 112 或168 默认168,x相比DES的秘钥长度更长，安全性更高
+            keyGenerator.init(168);
             //3. 生成秘钥
             secretKey = keyGenerator.generateKey();
         } catch (NoSuchAlgorithmException e) {
@@ -41,9 +41,9 @@ public class DesUtil {
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, "DES");
+            SecretKey secretKey = new SecretKeySpec(key, "DESede");
             //2. Cipher 完成加密工作
-            Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+            Cipher cipher = Cipher.getInstance("DESede");
             //3. 根据秘钥对cipher进行初始化
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             //4. 加密
@@ -64,9 +64,9 @@ public class DesUtil {
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, "DES");
+            SecretKey secretKey = new SecretKeySpec(key, "DESede");
             //2. Cipher 完成解密工作
-            Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+            Cipher cipher = Cipher.getInstance("DESede");
             //3. 根据秘钥对cipher进行初始化
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             //4. 解密
