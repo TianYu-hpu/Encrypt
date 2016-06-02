@@ -2,19 +2,18 @@ package cn.com.zenmaster.digest;
 
 /**
  * Created by TianYu on 2016/5/29.
+ * 摘要算法
  */
-public enum DigestAlgorithm {
-    MD5("MD5"),SHA("SHA-1"),SHA256("SHA-256"),SHA384("SHA-384"),SHA512("SHA-512")
-    ,HmacMD5("HmacMD5"),HmacSHA("HmacSHA1"),HmacSHA256("HmacSHA256"),HmacSHA384("HmacSHA384")
-    ,HmacSHA512("HmacSHA512");
-
-    private String value;
-
-    DigestAlgorithm(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
+public class DigestAlgorithm {
+	public static final String MD2 = "MD2";
+	public static final String MD5 = "MD5";
+	public static final String SHA = "SHA-1";
+	public static final String SHA256 = "SHA-256";
+	public static final String SHA384 = "SHA-384";
+	public static final String SHA512 = "SHA-512";
+	public static final String HmacMD5 = "HmacMD5";
+	public static final String HmacSHA = "HmacSHA1";
+	public static final String HmacSHA256 = "HmacSHA256";
+	public static final String HmacSHA384 = "HmacSHA384";
+	public static final String HmacSHA512 = "HmacSHA512";
 }

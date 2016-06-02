@@ -1,9 +1,15 @@
 package cn.com.zenmaster.symmetric;
 
-import javax.crypto.*;
-import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 /**
  * Created by TianYu on 2016/5/29.
@@ -26,7 +32,7 @@ public class DesUtil extends EncryptUtil {
         SecretKey secretKey = null;
         try {
             //1. 秘钥生成器
-            KeyGenerator keyGenerator = KeyGenerator.getInstance(SymmetricAlgorithm.DES.getValue());
+            KeyGenerator keyGenerator = KeyGenerator.getInstance(SymmetricAlgorithm.DES);
             //2. 秘钥生成器初始化
             keyGenerator.init(56);
             //3. 生成秘钥
@@ -47,7 +53,7 @@ public class DesUtil extends EncryptUtil {
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES.getValue());
+            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES);
             //2. Cipher 完成加密工作
             Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
             //3. 根据秘钥对cipher进行初始化
@@ -70,7 +76,7 @@ public class DesUtil extends EncryptUtil {
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES.getValue());
+            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES);
             //2. Cipher 完成解密工作
             Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
             //3. 根据秘钥对cipher进行初始化

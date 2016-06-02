@@ -1,9 +1,15 @@
 package cn.com.zenmaster.symmetric;
 
-import javax.crypto.*;
-import javax.crypto.spec.SecretKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 /**
  * Created by TianYu on 2016/5/29.
@@ -26,7 +32,7 @@ public class DesedeUtil extends EncryptUtil{
         SecretKey secretKey = null;
         try {
             //1. 秘钥生成器
-            KeyGenerator keyGenerator = KeyGenerator.getInstance(SymmetricAlgorithm.DES3.getValue());
+            KeyGenerator keyGenerator = KeyGenerator.getInstance(SymmetricAlgorithm.DES3);
             //2. 秘钥生成器初始化 可指定秘钥长度 112 或168 默认168,x相比DES的秘钥长度更长，安全性更高
             keyGenerator.init(168);
             //3. 生成秘钥
@@ -47,9 +53,9 @@ public class DesedeUtil extends EncryptUtil{
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES3.getValue());
+            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES3);
             //2. Cipher 完成加密工作
-            Cipher cipher = Cipher.getInstance(SymmetricAlgorithm.DES3.getValue());
+            Cipher cipher = Cipher.getInstance(SymmetricAlgorithm.DES3);
             //3. 根据秘钥对cipher进行初始化
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
             //4. 加密
@@ -70,9 +76,9 @@ public class DesedeUtil extends EncryptUtil{
         byte[] bytes = null;
         try {
             //1. 恢复秘钥
-            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES3.getValue());
+            SecretKey secretKey = new SecretKeySpec(key, SymmetricAlgorithm.DES3);
             //2. Cipher 完成解密工作
-            Cipher cipher = Cipher.getInstance(SymmetricAlgorithm.DES3.getValue());
+            Cipher cipher = Cipher.getInstance(SymmetricAlgorithm.DES3);
             //3. 根据秘钥对cipher进行初始化
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             //4. 解密

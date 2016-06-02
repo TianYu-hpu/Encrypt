@@ -1,10 +1,11 @@
 package cn.com.zenmaster;
 
-import cn.com.zenmaster.asymmetric.RSAUtil;
-
-import java.security.interfaces.RSAPrivateKey;
-import java.security.interfaces.RSAPublicKey;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.util.Map;
+
+import cn.com.zenmaster.asymmetric.DSAUtil;
+import cn.com.zenmaster.signature.DSASignature;
 
 /**
  * Created by TianYu on 2016/5/29.
@@ -15,18 +16,18 @@ public class Test {
         String data = "jikexueyuan";
 
         //DES 加解密
-       /* byte[] dessecretKey = DesUtil.getSecretKey();
+        /*byte[] dessecretKey = DesUtil.getInstance().getSecretKey();
         System.out.println("secretKey" + BytesToHex.fromBytesToHex(dessecretKey));
-        byte[] encryptData = DesUtil.encryptData(dessecretKey, data.getBytes());
+        byte[] encryptData = DesUtil.getInstance().encryptData(dessecretKey, data.getBytes());
         System.out.println("des 加密" + BytesToHex.fromBytesToHex(encryptData));
-        System.out.println("des 解密" + new String(DesUtil.descryptData(dessecretKey, encryptData)));*/
+        System.out.println("des 解密" + new String(DesUtil.getInstance().descryptData(dessecretKey, encryptData)));*/
 
         // 3DES 加解密
-       /* byte[] desedeSecretKey = DesedeUtil.getSecretKey();
+        /*byte[] desedeSecretKey = DesedeUtil.getInstance().getSecretKey();
         System.out.println("secretKey" + BytesToHex.fromBytesToHex(desedeSecretKey));
-        byte[] encryptDataDesede = DesedeUtil.encryptData(desedeSecretKey, data.getBytes());
+        byte[] encryptDataDesede = DesedeUtil.getInstance().encryptData(desedeSecretKey, data.getBytes());
         System.out.println("3des 加密" + BytesToHex.fromBytesToHex(encryptDataDesede));
-        System.out.println("3des 解密" + new String(DesedeUtil.descryptData(desedeSecretKey, encryptDataDesede)));*/
+        System.out.println("3des 解密" + new String(DesedeUtil.getInstance().descryptData(desedeSecretKey, encryptDataDesede)));*/
 
         // AES 加解密
         /*byte[] aesSecretKey = AesUtil.getInstance().getSecretKey();
@@ -36,19 +37,20 @@ public class Test {
         System.out.println("aes 解密" + new String(AesUtil.getInstance().descryptData(aesSecretKey, encryptDataAes)));*/
 
         //摘要算法
-        /*System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getMD5Digest(data.getBytes())));
-        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getSHA1Digest(data.getBytes())));
-        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getSHA256Digest(data.getBytes())));
-        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getSHA384Digest(data.getBytes())));
-        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getSHA512Digest(data.getBytes())));*/
-
+        /*System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getDigest(data.getBytes(), DigestAlgorithm.MD2)));
+        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getDigest(data.getBytes(), DigestAlgorithm.MD5)));
+        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getDigest(data.getBytes(), DigestAlgorithm.SHA)));
+        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getDigest(data.getBytes(), DigestAlgorithm.SHA256)));
+        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getDigest(data.getBytes(), DigestAlgorithm.SHA384)));
+        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getDigest(data.getBytes(), DigestAlgorithm.SHA512)));
+        byte[] secretKey = DigestUtil.getHMACSecretKey(DigestAlgorithm.HmacMD5);
+        System.out.println(BytesToHex.fromBytesToHex(DigestUtil.getHMACDigest(secretKey, data.getBytes(), DigestAlgorithm.HmacMD5)));*/
         //HmacMD5 摘要
 
-       /* byte[] hmacMD5SecretKey = DigestUtil.getInstance().getHMACSecretKey(DigestAlgorithm.HmacSHA256.getValue());
+        /*byte[] hmacMD5SecretKey = DigestUtil.getHMACSecretKey(DigestAlgorithm.HmacSHA256);
 
         System.out.println(BytesToHex.fromBytesToHex(hmacMD5SecretKey));
-
-        System.out.print(BytesToHex.fromBytesToHex(DigestUtil.getInstance().getHMACDigest(hmacMD5SecretKey, data.getBytes(), DigestAlgorithm.HmacSHA256.getValue())));*/
+        System.out.print(BytesToHex.fromBytesToHex(DigestUtil.getHMACDigest(hmacMD5SecretKey, data.getBytes(), DigestAlgorithm.HmacSHA256)));*/
 
         //甲方公钥
         byte[] publicKey1;
@@ -65,7 +67,7 @@ public class Test {
 
         //初始化秘钥，并生成甲方秘钥对
         /*Map<String, Object> map1 = DHUtils.initKey();
-        publicKey1 = DHUtils.getPublicKey(map1);
+        publicKey1 = DHUtils.getPublicKey(DHUtils.getPublicKey((PublicKey) map1.get(KeyUtil.PUBLIC_KEY)));
         privateKey1 = DHUtils.getPrivateKey(map1);
 
         //输出甲方公钥和私钥
@@ -90,13 +92,30 @@ public class Test {
         System.out.println("甲方本地秘钥:" + BytesToHex.fromBytesToHex(localKey1));*/
 
         //RSA算法
-        Map<String, Object> map = RSAUtil.initKey();
-        RSAPublicKey publicKey = RSAUtil.getPublicKey(map);
-        RSAPrivateKey privateKey = RSAUtil.getPrivateKey(map);
-        byte[] encryptData = RSAUtil.encryptData(publicKey, data.getBytes());
+        /*Map<String, Object> map = RSAUtil.initKey();
+        byte[] publicKey = RSAUtil.getPublicKey(map);
+        byte[] privateKey = RSAUtil.getPrivateKey(map);
+        byte[] encryptData = RSAUtil.encryptData(RSAUtil.getPublicKey(publicKey), data.getBytes());
         System.out.println("加密后数据:" + BytesToHex.fromBytesToHex(encryptData));
-        System.out.println("解密后数据:" + new String(RSAUtil.descryptData(privateKey, encryptData)));
+        System.out.println("解密后数据:" + new String(RSAUtil.descryptData(RSAUtil.getPrivateKey(privateKey), encryptData)));*/
 
+        //RSA签名
+       /* Map<String, Object> keyMap = RSAUtil.initKey();
+        byte[] publicKey = KeyUtil.getPublicKey((PublicKey) keyMap.get(KeyUtil.PUBLIC_KEY));
+        byte[] privateKey = KeyUtil.getPrivateKey((PrivateKey) keyMap.get(KeyUtil.PRIVATE_KEY));
+        byte[] sign = RSASignature.getInstance().sign(privateKey, data.getBytes());
+        System.out.println("MD5withRSA signature:" + BytesToHex.fromBytesToHex(sign));
+        boolean result = RSASignature.getInstance().verify(sign, data.getBytes(), publicKey);
+        System.out.println("MD5withRSA sinature result:" + result);*/
+
+        /*DSA签名*/
+        Map<String, Object> keyMap = DSAUtil.initKey();
+        byte[] publicKey = KeyUtil.getPublicKey((PublicKey) keyMap.get(KeyUtil.PUBLIC_KEY));
+        byte[] privateKey = KeyUtil.getPrivateKey((PrivateKey) keyMap.get(KeyUtil.PRIVATE_KEY));
+        byte[] sign = DSASignature.getInstance().sign(privateKey, data.getBytes());
+        System.out.println("SHA1withRSA signature:" + BytesToHex.fromBytesToHex(sign));
+        boolean result = DSASignature.getInstance().verify(sign, "jikexueyuan123".getBytes(), publicKey);
+        System.out.println("SHA1withRSA sinature result:" + result);
     }
 
 }

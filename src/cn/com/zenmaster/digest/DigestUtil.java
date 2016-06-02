@@ -1,23 +1,19 @@
 package cn.com.zenmaster.digest;
 
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.InvalidKeyException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by TianYu on 2016/5/29.
  */
 public class DigestUtil {
 
-    private static DigestUtil instance;
-
-    public static DigestUtil getInstance() {
-        return new DigestUtil();
-    }
 
     /**
      * 生成 MD5或SHA算法的摘要摘要
@@ -25,7 +21,7 @@ public class DigestUtil {
      * @param data
      * @return
      */
-    public byte[] getDigest(byte[] data, String digestAlgorithm) {
+    public static byte[] getDigest(byte[] data, String digestAlgorithm) {
         byte[] result = null;
         try {
             // 初始化
@@ -44,7 +40,7 @@ public class DigestUtil {
      *
      * @return
      */
-    public byte[] getHMACSecretKey(String digestAlgorithm) {
+    public static byte[] getHMACSecretKey(String digestAlgorithm) {
         byte[] result = null;
         try {
             KeyGenerator keyGenerator = KeyGenerator.getInstance(digestAlgorithm);
@@ -61,13 +57,13 @@ public class DigestUtil {
      *
      * @return
      */
-    public byte[] getHMACDigest(byte[] key, byte[] data, String digestAlgorithm) {
+    public static byte[] getHMACDigest(byte[] key, byte[] data, String digestAlgorithm) {
         byte[] result = null;
         try {
             //从字节数组还原秘钥
             SecretKey secretKey = new SecretKeySpec(key, digestAlgorithm);
             //实例化Mac
-            Mac mac = Mac.getInstance("HmacMD5");
+            Mac mac = Mac.getInstance(DigestAlgorithm.HmacMD5);
             //用秘钥初始化mac
             mac.init(secretKey);
             //执行消息摘要
