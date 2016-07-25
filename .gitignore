@@ -18,3 +18,9 @@ hs_err_pid*
 
 *.iml
 
+#Eclipse
+.settings/
+target/
+.classpath
+.project
+
